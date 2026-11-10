@@ -1,0 +1,75 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Barlow', system-ui, sans-serif;
+  --font-display: 'Barlow Condensed', 'Barlow', system-ui, sans-serif;
+
+  /* Cores aproximadas da fachada — referenciais, não códigos oficiais da marca. */
+  --color-grafite-950: #1b1f23;
+  --color-grafite-900: #23282d;
+  --color-grafite-800: #2b3036;
+  --color-grafite-700: #343a40;
+  --color-grafite-600: #495057;
+  --color-grafite-500: #6b737b;
+  --color-grafite-300: #b6bcc2;
+  --color-grafite-200: #d9dde1;
+  --color-grafite-100: #e9ecef;
+  --color-grafite-50: #f3f5f7;
+  --color-dudu-700: #006d99;
+  --color-dudu-600: #0086bb;
+  --color-dudu-500: #00a9e8;
+  --color-dudu-300: #7fd4f4;
+  --color-dudu-100: #d9f2fc;
+  --color-dudu-50: #eef9fe;
+  --color-zap-600: #128c4b;
+  --color-zap-500: #1faa59;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  @apply bg-grafite-50 text-grafite-900 antialiased;
+  font-family: var(--font-sans);
+}
+h1, h2, h3 {
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
+}
+:focus-visible {
+  outline: 3px solid var(--color-dudu-500);
+  outline-offset: 2px;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 rounded-lg px-4 py-2 text-[15px] font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primario {
+    @apply bg-dudu-500 text-grafite-950 hover:bg-dudu-300;
+  }
+  .btn-escuro {
+    @apply bg-grafite-800 text-white hover:bg-grafite-700;
+  }
+  .btn-zap {
+    @apply bg-zap-500 text-white hover:bg-zap-600;
+  }
+  .btn-linha {
+    @apply border border-grafite-200 bg-white text-grafite-800 hover:border-grafite-500;
+  }
+  .btn-perigo {
+    @apply border border-red-200 bg-white text-red-700 hover:bg-red-50;
+  }
+  .campo {
+    @apply min-h-11 w-full rounded-lg border border-grafite-200 bg-white px-3 py-2 text-[15px] text-grafite-900 placeholder:text-grafite-500 focus:border-dudu-500 focus:outline-none focus:ring-2 focus:ring-dudu-100;
+  }
+  .rotulo {
+    @apply mb-1 block text-sm font-semibold text-grafite-700;
+  }
+  .cartao {
+    @apply rounded-xl border border-grafite-100 bg-white;
+  }
+  .titulo-secao {
+    @apply text-3xl font-bold uppercase text-grafite-900 sm:text-4xl;
+  }
+}
