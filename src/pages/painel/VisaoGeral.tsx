@@ -48,7 +48,7 @@ export function VisaoGeral() {
         ))}
       </div>
 
-      <div className="mt-6 grid gap-4 lg:grid-cols-[1.5fr_1fr]">
+      <div className="mt-6 grid gap-4 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)] [&>*]:min-w-0">
         <section className="cartao p-4">
           <div className="flex items-center justify-between">
             <h2 className="text-xl font-bold uppercase">Últimas solicitações</h2>

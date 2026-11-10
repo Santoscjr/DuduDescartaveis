@@ -18,7 +18,9 @@ export function LayoutPainel() {
   const { pedidos, clientes } = useBanco()
   const novos = calcularIndicadores(pedidos, clientes).novos
   const { pathname } = useLocation()
-  useEffect(() => window.scrollTo(0, 0), [pathname])
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
 
   return (
     <div className="min-h-dvh bg-grafite-50 lg:grid lg:grid-cols-[232px_1fr]">
